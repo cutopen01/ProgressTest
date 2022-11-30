@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProgressTest.MainPage"
-             BackgroundColor="Black">
+             BackgroundColor="Black"
+             NavigationPage.HasNavigationBar="False">
 
     <Grid >
         <Grid.RowDefinitions>
@@ -23,7 +24,7 @@
                 HorizontalOptions="Center"
                 VerticalOptions="Center">
                 <Image Source="pt.jpeg"
-                       HeightRequest="100"
+                       HeightRequest="150"
                        WidthRequest="100"
                        ></Image>
             </Border>
@@ -34,8 +35,20 @@
                 <VerticalStackLayout Margin="0,0,0,0">
                     <Label Text="Vincent van Gogh" FontSize="30" HorizontalOptions="Center" Margin="0,0,0,0" TextColor="White"/>
                     <Label Text="Dutch, 1853 - 1890" HorizontalOptions="Center"  Margin="0,0,0,0" TextColor="White"/>
-                    <Label Text="Was a Dutch Post-Impressionist painter who is among the most famous and influential..." Margin="0,20,0,0" HorizontalOptions="Center" TextColor="White"/>
-                </VerticalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <Label Text="Was a Dutch Post-Impressionist painter ..." Margin="0,20,0,0" HorizontalOptions="Center" TextColor="White"/>
+                    <Label Text="Read more" Margin="0,20,0,0" HorizontalOptions="Center" TextColor="Red">
+
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding TapCommand}"
+                                      CommandParameter="https://en.wikipedia.org/wiki/Vincent_van_Gogh" />
+                        </Label.GestureRecognizers>
+
+                    </Label>
+                </HorizontalStackLayout>
+                    
+                    
+            </VerticalStackLayout>
 
             <Grid Margin="0,20,0,0" >
                 <Grid.ColumnDefinitions>
@@ -45,13 +58,13 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Line  Grid.ColumnSpan="4"   
+                <Line  Grid.ColumnSpan="4"   Margin="0,-5,0,0"
                     X1="500"
                    Y1="0"
                    X2="0"
                    Y2="0"
                    Stroke="grey" ></Line>
-                
+
                 <VerticalStackLayout Grid.Column="0">
                     <Label Text="$7.5m" FontSize="20" HorizontalOptions="Center" TextColor="White"/>
                     <Label Text="Record" FontSize="20" HorizontalOptions="Center" TextColor="White"/>
@@ -73,6 +86,7 @@
                 </VerticalStackLayout>
 
 
+
             </Grid>
 
             <Line  Grid.ColumnSpan="4"   
@@ -83,10 +97,12 @@
                    Stroke="grey" Margin="0,0,0,0"></Line>
 
         </VerticalStackLayout>
+        
+
 
         <VerticalStackLayout Grid.Row="2">
 
-            <Label Text="Other Van Goah Work" FontSize="20" HorizontalOptions="Start" Margin="10,10,0,0" TextColor="White"/>
+            <Label Text="Other Van Goah Work" FontSize="20" HorizontalOptions="Start" Margin="10,15,0,0" TextColor="White"/>
 
         </VerticalStackLayout>
 
@@ -98,7 +114,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             
-            <ScrollView Margin="10,0,0,0">
+            <ScrollView Margin="20,0,0,0">
                 <VerticalStackLayout Grid.Column="0">
                     <VerticalStackLayout>
                         <Image Source="download.jpg"></Image>
@@ -121,7 +137,7 @@
             </ScrollView>
             
             
-            <ScrollView Grid.Column="1" Margin="20,0,0,0">
+            <ScrollView Grid.Column="1" Margin="30,0,0,0">
                 <VerticalStackLayout Grid.Column="1">
                     <VerticalStackLayout>
                         <Image Source="download3.jpg"></Image>
