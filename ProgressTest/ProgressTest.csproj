@@ -49,6 +49,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\download.jpeg" />
+	  <None Remove="Resources\Images\download2.jpeg" />
+	  <None Remove="Resources\Images\download3.jpeg" />
+	  <None Remove="Resources\Images\download4.jpeg" />
+	  <None Remove="Resources\Images\PT.jpeg" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Folder Include="ViewModels\" />
 	</ItemGroup>
 
